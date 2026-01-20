@@ -992,9 +992,6 @@ DHCPV4_DATA *IPCSendDhcpRequestEx(IPC *ipc, IP *dest_ip, UINT tran_id, DHCP_OPTI
 				// Time-out time
 				giveup_time = now + (resend_interval - 100) * (num_tries);
 
-				Debug("IPCSendDhcpRequestEx: SENT TO/ext=%s(%ld) num_tries=%ld resend_int=%5u giveup_time=%lld now=%I64u next=%I64u(%5lld)\n"
-					, max_tries != 0 ? "ON" : "OFF", max_tries, num_tries, resend_interval, giveup_time - now, now, next_send_time, next_send_time - now);
-
 				// Retransmission interval
 				if (backoff_mode == 1)
 				{
